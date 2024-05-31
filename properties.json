@@ -1,0 +1,26 @@
+[
+    {
+        "name": "category",
+        "description": "What type of email this is.",
+        "type": "string",
+        "enum": ["update", "action_item", "customer_feedback", "announcement", "other"],
+        "required": true
+    },
+    {
+        "name": "mentions",
+        "description": "A list of all people mentioned in this email.",
+        "type": "array",
+        "items": {
+            "name": "full_name",
+            "description": "The full name of the person mentioned.",
+            "type": "string"
+        },
+        "required": true
+    },
+    {
+        "name": "eli5",
+        "description": "Explain this email to me like I'm 5 years old.",
+        "type": "string",
+        "required": true
+    }
+]

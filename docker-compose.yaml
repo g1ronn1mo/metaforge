@@ -1,0 +1,15 @@
+services:
+  python-script-runner:
+    build: .
+    container_name: python_script_runner
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_API_MODEL=${OPENAI_API_MODEL}
+    command: python app.py
+    env_file:
+      - .env
